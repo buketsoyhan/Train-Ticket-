@@ -1,0 +1,133 @@
+﻿<div class="ticket-rez">
+    <h2>Train Ticket Booking & Sales</h2>
+
+    <div class="ticket-type">
+        <div class="types">
+            <input type="radio" id="type1" name="type" value="Sales">
+            <label for="html">Sales</label><br>
+        </div>
+        <div class="types">   
+            <input type="radio" id="type2" name="type" value="Booking">
+            <label for="html">Booking</label><br>
+        </div>
+    </div>
+    <div class="ticket-location">
+        <div class="location-from">
+            <p>From </p>
+            <select name="from" id="from">
+                <option value="ankara">Ankara</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="eskişehir">Eskişehir</option>
+                <option value="Konya">Konya</option>
+              </select>
+        </div>
+
+        <div class="location-to">
+            <p>To</p>
+            <select name="to" id="to">
+                <option value="izmir">İzmir</option>
+                <option value="kars">Kars</option>
+                <option value="balikesir">Balıkesir</option>
+                <option value="Bursa">Bursa</option>
+              </select>
+        </div>
+    </div>
+
+    <div class="ticket-date">
+        <p>Departure Date</p>
+        <input type="date" id="departure" name="departure">
+    </div>
+
+    <div class="ticket-search" >
+        <input type="submit" class="btn btn-primary" value="Search" >          
+    </div>
+</div>
+
+<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form>
+
+
+
+<style>
+    .ticket-rez h2{
+        padding-bottom: 2rem;
+    }
+    .ticket-type {
+        display: flex;
+        align-items: center;
+    }
+    .ticket-type .types label{
+        margin-right: 4rem;
+        margin-left: 1rem;
+        font-size:large;
+        font-weight:500;
+    }
+    .ticket-location{
+        display: flex;
+    }
+    .location-from{
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .location-from p{
+        margin-right: 2rem;
+        font-size:large;
+        font-weight: 500;
+    }
+    .location-from #from{
+        width: 10rem;
+        margin-right: 3rem;
+    }
+    .location-to{
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+    .location-to p{
+        margin-right: 2rem;
+        font-size:large;
+        font-weight: 500;
+    }
+    .location-to #to{
+        width: 10rem;
+    }
+    .ticket-date p{
+        font-size:large;
+        font-weight: 500;
+        margin-top: 1rem;
+
+    }
+    .ticket-date #departure{
+        margin-bottom: 2rem;
+    }
+
+    .ticket-search{
+       margin-bottom: 2rem;
+    }
+
+    
+</style>

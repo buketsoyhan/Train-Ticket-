@@ -1,0 +1,98 @@
+﻿<h2>Train Ticket Sales Page</h2>
+<div class="sales-body">
+  <div class="image">
+    <img
+      src="https://cdn2.unrealengine.com/egs-trainlife-simteract-g1a-04-1920x1080-d52ee6a8a5b5.jpg?h=720&resize=1&w=1280"
+      width="500px"
+    />
+  </div>
+  
+  <div>
+    <div class="name-area">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value=" {{ currentUser.firstName }} {{ currentUser.lastName }}"
+    /><br />
+    <br />
+</div>
+    <div class="ticket-location">
+      <div class="location-from">
+        <p>From</p>
+        <select name="from" id="from">
+          <option value="ankara">Ankara</option>
+          <option value="istanbul">İstanbul</option>
+          <option value="eskişehir">Eskişehir</option>
+          <option value="Konya">Konya</option>
+        </select>
+      </div>
+
+      <div class="location-to">
+        <p>To</p>
+        <select name="to" id="to">
+          <option value="izmir">İzmir</option>
+          <option value="kars">Kars</option>
+          <option value="balikesir">Balıkesir</option>
+          <option value="Bursa">Bursa</option>
+        </select>
+      </div>
+    </div>
+    <div class="ticket-date">
+      <p>Departure Date</p>
+      <input type="date" id="date" name="date" />
+    </div>
+    <input class="btn btn-primary" id="btn" type="submit" value="Buy" />
+  </div>
+</div>
+<style>
+  label {
+    padding-right: 2rem;
+  }
+  #btn {
+    margin-top: 1rem;
+    margin-left: 4rem;
+    width: 10rem;
+  }
+  .sales-body{
+      display: flex; 
+      margin-top: 3rem;
+      justify-content: right;
+  }
+  .image{
+      margin-right: 3rem;
+  }
+  .name-area{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+  }
+  .location-from{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;  
+  }
+  .location-from #from{
+    margin-left: 2.5rem;
+    width: 200px;
+  }
+  .location-to{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+  }
+  .location-to #to{
+    margin-left: 3.8rem;
+    width: 200px;
+  }
+  .ticket-date{
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+  }
+  .ticket-date p{
+      margin-right: 0.6rem;
+  }
+
+</style>
